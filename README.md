@@ -20,7 +20,7 @@ const wrapper = new acc_node_wrapper("Max", "127.0.0.1", 9000, "123", "123", 250
 
 | Event | Description |
 | --- | --- |
-| "REGISTRATION_RESULT" | Result of connection request. |
+| "REGISTRATION_RESULT" | Result of REGISTRATION_RESULT. |
 | "REALTIME_UPDATE" | Result of REALTIME_UPDATE. |
 | "REALTIME_CAR_UPDATE" | Result of REALTIME_CAR_UPDATE. |
 | "ENTRY_LIST" | Result of ENTRY_LIST. |
