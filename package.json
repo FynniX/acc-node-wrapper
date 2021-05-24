@@ -1,15 +1,15 @@
 {
   "name": "acc-node-wrapper",
   "version": "1.0.0",
-  "description": "This is a ACC Wrapper for Node.JS",
+  "description": "ACC SDK implementation for Node.js.",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
   },
   "keywords": [
-    "ACC",
-    "Assetto Corsa Competizione",
-    "Node.JS Wrapper"
+    "nodejs",
+    "assetto-corsa-competizione",
+    "assetto-corsa-competizione-server"
   ],
   "author": "Fynn Haupt",
   "license": "MIT",

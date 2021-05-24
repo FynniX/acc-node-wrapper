@@ -26,7 +26,7 @@ const {
 /**
  *  @class
  *  @name ACC_Node_Wrapper
- *  @comment This is a ACC Wrapper for Node.JS
+ *  @comment ACC SDK implementation for Node.js.
  *  @extends EventEmitter
  */
 class ACC_Node_Wrapper extends EventEmitter {
