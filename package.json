@@ -6,6 +6,10 @@
   "scripts": {
     "start": "node src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FynniX/acc-node-wrapper.git"
+  },
   "keywords": [
     "nodejs",
     "assetto-corsa-competizione",
@@ -13,10 +17,6 @@
   ],
   "author": "Fynn Haupt",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/FynniX/acc-node-wrapper.git"
-  },
   "dependencies": {
     "binutils": "^0.1.0",
     "moment": "^2.29.1",
