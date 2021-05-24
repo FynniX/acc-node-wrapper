@@ -1,0 +1,21 @@
+{
+  "name": "acc-node-wrapper",
+  "version": "1.0.0",
+  "description": "This is a ACC Wrapper for Node.JS",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "ACC",
+    "Assetto Corsa Competizione",
+    "Node.JS Wrapper"
+  ],
+  "author": "Fynn Haupt",
+  "license": "MIT",
+  "dependencies": {
+    "binutils": "^0.1.0",
+    "moment": "^2.29.1",
+    "utf8-bytes": "^0.0.1"
+  }
+}
