@@ -63,19 +63,6 @@ class ACC_Node_Wrapper extends EventEmitter {
 
         this.Logging = Logging
 
-        /*==== Events ====*/
-        this.on('RequestConnection', this.RequestConnection)
-        this.on('Disconnect', this.Disconnect)
-
-        this.on('RequestEntryList', this.RequestEntryList)
-        this.on('RequestTrackData', this.RequestTrackData)
-
-        this.on('SetFocus', this.SetFocus)
-        this.on('SetCamera', this.SetCamera)
-
-        this.on('RequestInstantReplay', this.RequestInstantReplay)
-        this.on('RequestHUDPage', this.RequestHUDPage)
-
         client.on('message', (message, udp_info) => {
             /*=== Handling Message ====*/
             const result = this.handlingMessage(message)
@@ -97,7 +84,6 @@ class ACC_Node_Wrapper extends EventEmitter {
         this.RequestConnection()
     }
 
-    /*==== Error Handling ====*/
     /**
      * @comment This is handling the errors.
      * @param err
@@ -333,7 +319,7 @@ class ACC_Node_Wrapper extends EventEmitter {
 
     /**
      * @name RequestTrackData
-     * @comment This function request the entry list.
+     * @comment This function request the track data.
      */
     RequestTrackData = () => {
         const writer = new binutils.BinaryWriter('little')
