@@ -13,6 +13,10 @@
   ],
   "author": "Fynn Haupt",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FynniX/acc-node-wrapper.git"
+  },
   "dependencies": {
     "binutils": "^0.1.0",
     "moment": "^2.29.1",
