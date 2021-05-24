@@ -14,8 +14,8 @@ This package was tested under [Node.js](https://nodejs.org/) 15.11.0 x64.
 ## API documentation
 
 ```js
-const acc_node_wrapper = require('acc-node-wrapper')
-const wrapper = new acc_node_wrapper("Max", "127.0.0.1", 9000, "123", "123", 250, true)
+const ACCNodeWrapper = require('acc-node-wrapper')
+const wrapper = new ACCNodeWrapper("Max", "127.0.0.1", 9000, "123", "123", 250, true)
 ```
 
 | Event | Description |
