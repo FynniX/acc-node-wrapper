@@ -1,6 +1,6 @@
 {
   "name": "acc-node-wrapper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ACC SDK implementation for Node.js.",
   "main": "src/index.js",
   "scripts": {

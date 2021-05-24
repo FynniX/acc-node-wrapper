@@ -64,11 +64,11 @@ class ACC_Node_Wrapper extends EventEmitter {
         this.Logging = Logging
 
         client.on('message', (message, udp_info) => {
-            /*=== Handling Message ====*/
+            /*==== Handling Message ====*/
             const result = this.handlingMessage(message)
             this.emit(result["type"], result["result"])
 
-            /*=== Logging Message ====*/
+            /*==== Logging Message ====*/
             if(this.Logging) {
                 console.log("=== ACC Node Wrapper ===")
                 console.log("=== UDP Message Start ===")
@@ -174,7 +174,6 @@ class ACC_Node_Wrapper extends EventEmitter {
 
                 const carEntry = FirstOrDefault(this._entryListCars, value => value.CarIndex === result.CarIndex)
                 if (carEntry === null || this._entryListCars[carEntry].Drivers.length !== result.DriverCount)
-                    console.log(moment().format("x") - this.lastEntrylistRequest)
                     if (moment().format("x") - this.lastEntrylistRequest > 1000) {
                         this.lastEntrylistRequest = moment().format("x")
                         this.RequestEntryList()
