@@ -984,23 +984,4 @@ class ACCNodeWrapper extends EventEmitter {
     }
 }
 
-const wrapper = new ACCNodeWrapper()
-
-/**
- * @name initBroadcastSDK
- * @comment This is the init function for the ACC Node Wrapper. This inits the Broadcast SDK.
- * @param SERVER_DISPLAYNAME
- * @param SERVER_IP
- * @param SERVER_PORT
- * @param SERVER_PASS
- * @param SERVER_COMMANDPASS
- * @param UPDATE_INTERVAL
- * @param Logging
- */
-
-wrapper.initBroadcastSDK("Max", "127.0.0.1", 9000, "123", "123", 250, true)
-wrapper.initSharedMemory(250, 250, 250, true)
-
-
-
 module.exports = ACCNodeWrapper
