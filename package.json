@@ -1,7 +1,7 @@
 {
   "name": "acc-node-wrapper",
-  "version": "1.0.4",
-  "description": "ACC SDK implementation for Node.js.",
+  "version": "1.0.5",
+  "description": "ACC SDK and ACC Shared Memory implementation for Node.js.",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js"
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FynniX/acc-node-wrapper#readme",
   "dependencies": {
+    "@fynnix/node-easy-ipc": "^1.0.8",
     "binutils": "^0.1.0",
     "moment": "^2.29.1",
     "utf8-bytes": "^0.0.1"
