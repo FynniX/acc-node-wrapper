@@ -1,6 +1,6 @@
 {
   "name": "acc-node-wrapper",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "ACC SDK and ACC Shared Memory implementation for Node.js.",
   "main": "src/index.js",
   "scripts": {
