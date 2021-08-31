@@ -327,6 +327,7 @@ class ACCNodeWrapper extends EventEmitter {
     Disconnect = () => {
         const writer = new binutils.BinaryWriter('little')
         writer.WriteBytes([constants.outboundMessageTypes.UNREGISTER_COMMAND_APPLICATION])
+        writer.WriteUInt32(this.ConnectionId)
 
         const disconnect = writer.ByteBuffer
         client.send(disconnect, 0, disconnect.length, this.SERVER_PORT, this.SERVER_IP, this.handleError)
@@ -383,7 +384,7 @@ class ACCNodeWrapper extends EventEmitter {
         writer.WriteBytes([constants.outboundMessageTypes.CHANGE_FOCUS])
         writer.WriteUInt32(this.ConnectionId)
 
-        if (carIndex !== null && carIndex !== undefined)
+        if (carIndex === null)
             writer.WriteBytes([0])
         else {
             writer.WriteBytes([1])
@@ -394,8 +395,12 @@ class ACCNodeWrapper extends EventEmitter {
             writer.WriteBytes([0])
         else {
             writer.WriteBytes([1])
-            writer.WriteBytes(utf8(cameraSet))
-            writer.WriteBytes(utf8(camera))
+            const cSet = utf8(cameraSet);
+            writer.WriteUInt16(cSet.length);
+            writer.WriteBytes(cSet);
+            const c = utf8(camera);
+            writer.WriteUInt16(c.length);
+            writer.WriteBytes(c);
         }
 
         const request = writer.ByteBuffer
@@ -413,10 +418,14 @@ class ACCNodeWrapper extends EventEmitter {
 
         writer.WriteFloat(startSessionTime)
         writer.WriteFloat(durationMS)
-        writer.WriteUInt32(initialFocusedCarIndex || -1)
+        writer.WriteInt32(initialFocusedCarIndex || -1)
 
-        writer.WriteBytes(utf8(initialCameraSet || ""))
-        writer.WriteBytes(utf8(initialCamera || ""))
+        const cameraSet = utf8(initialCameraSet || "");
+        writer.WriteUInt16(cameraSet.length);
+        writer.WriteBytes(cameraSet);
+        const camera = utf8(initialCamera || "");
+        writer.WriteUInt16(camera.length);
+        writer.WriteBytes(camera);
 
         const request = writer.ByteBuffer
         client.send(request, 0, request.length, this.SERVER_PORT, this.SERVER_IP, this.handleError)
@@ -431,7 +440,9 @@ class ACCNodeWrapper extends EventEmitter {
         writer.WriteBytes([constants.outboundMessageTypes.CHANGE_HUD_PAGE])
         writer.WriteUInt32(this.ConnectionId)
 
-        writer.WriteBytes(utf8(hudPage))
+        const page = utf8(hudPage);
+        writer.WriteUInt16(page.length);
+        writer.WriteBytes(hudPage);
 
         const request = writer.ByteBuffer
         client.send(request, 0, request.length, this.SERVER_PORT, this.SERVER_IP, this.handleError)
